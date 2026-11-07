@@ -153,3 +153,7 @@ It's possible to customize the language list. This allows you to remove language
 The connector sends the source language without region (`en_us` → `en`) and the target language with one: `de_ch` → `de-CH`; a language without a region gets a default (`de` → `de-DE`, `fr` → `fr-FR`, `en` → `en-US`). To order Swiss German, French or Italian, translate into `de_ch`, `fr_ch` or `it_ch`.
 
 > **Note:** The three screenshots that originally illustrated this section could not be recovered — they were no longer available on the original host and were never captured by the Wayback Machine. The written steps above are complete and unchanged.
+
+## Support
+
+Questions, problems or ideas: use the [Supertext support form](https://integrations.supertext.com/en/support?platform=adobe-experience-manager). Mention the version of Adobe Experience Manager and of the plugin, what you did and what you expected; an error message helps a lot. You get an answer by email, in your language.
