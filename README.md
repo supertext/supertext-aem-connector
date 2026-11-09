@@ -39,6 +39,8 @@ Dependabot (`.github/dependabot.yml`) proposes Maven and GitHub Actions updates 
 - **`content-package-maven-plugin`** stays at 0.5.1: 0.5.24 adds package-dependency validation that fails on `ui.apps` (its dependency on `ui.content` isn't in Maven coordinates, and `/apps` isn't covered), and 1.x dropped the `content-package` packaging that `ui.apps` and `ui.content` use. Moving on is a separate migration to `org.apache.jackrabbit:filevault-package-maven-plugin`.
 - **`maven-bundle-plugin`** stays below 6.0: 6.x is built on bnd 7, which needs Java 17, and the build must run on JDK 8 and 11 (CI fails with 6.2.0).
 
+`.github/workflows/dependabot-merge.yml` merges a minor or patch Maven update by itself once every other check on its pull request has passed (it waits up to 85 minutes and leaves the pull request alone if a check fails). GitHub Actions updates and majors stay for a person: the workflow's built-in token can't merge changes to workflow files, and a major needs a decision. Merges by the workflow don't start CI on `main`; the weekly health check looks at `main`.
+
 ## Language codes
 
 AEM's language codes (`de`, `de_ch`, `en-us`, …) are converted in `core/…/impl/LanguageCodes.java` (unit-tested) before the quote and the order are requested, following the rule used by all Supertext plugins:
