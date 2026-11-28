@@ -51,7 +51,8 @@ public class SupertextTranslationCloudConfigImpl implements SupertextTranslation
                 log.trace("Created Supertext Cloud Config with the following:");
                 log.trace("serverUrl: {}", serverUrl);
                 log.trace("username: {}", username);
-                log.trace("apiKey: {}", apiKey);
+                // Never the API key itself, only whether one is set.
+                log.trace("apiKey set: {}", !apiKey.isEmpty());
             }
         } else {
             throw new TranslationException("Error getting Cloud Config credentials",
